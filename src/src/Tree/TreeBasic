@@ -1,0 +1,5 @@
+Binary Search Tree:
+Time complex:
+access, insert, delete, search:O(logn)
+
+Space complex: O(n)

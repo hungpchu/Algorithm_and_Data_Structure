@@ -1,8 +1,6 @@
 package Tree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class BinaryTree {
 
@@ -232,8 +230,93 @@ public class BinaryTree {
         }
     }
 
+    public static int countLeaf(Node root,int sum){
+        if(root == null) return sum;
+        if(root.left != null){
+            if(root.left.right == null && root.left.right == null) sum += 1;
+            sum = countLeaf(root.left,sum);
+        }
+
+        if(root.right != null){
+            if(root.left.right == null && root.right.right == null) sum += 1;
+            sum = countLeaf(root.left,sum);
+        }
+        return sum;
+    }
+
+    // DFS : in-order, post-order & pre-order
+
+
     private void visit(int value) {
         System.out.print(" " + value);
+    }
+
+    // DFS : in-order, post-order & pre-order
+    // BFS : pre-order
+    //
+    // Time Complexity : O( N )
+    // Space Complexity : O( N )
+    //
+    List<List< Integer >> finalPathsList;
+
+    public List<List<Integer>> pathSum(Node root, int sum) {
+        finalPathsList = new ArrayList<>();
+
+        if ( root == null ) return finalPathsList;
+
+        ArrayList< Integer > defaultList = new ArrayList< Integer >();
+
+        // 0. STARTING CASE
+        // Add root, because I'm at root right now
+        defaultList.add( root.value );
+
+        // 0. START RECURSION
+        getPathSum( root, new ArrayList< Integer >( defaultList ), sum );
+
+        return finalPathsList;
+    }
+
+    // 4. FROM 1, 2, 3 you would know what to pass as argument to recursive function
+    public void getPathSum( Node h, List< Integer > path, int sumSoFar ) {
+        //
+        // 1. CORNER CASE
+        //
+        if ( h == null ) {
+            return;
+        }
+
+        //
+        // 2. FINAL CASE: Reach a leaf that satisfies
+        //
+        if ( ( h.left == null ) && ( h.right == null ) ) {
+            if ( sumSoFar - h.value == 0 ) {
+                finalPathsList.add( path );
+            }
+            return;
+        }
+
+        //
+        // 3-1. RECURSIVE STEP ( continue searching to the left )
+        //
+        if ( h.left != null ) {
+            // Create a new arraylist to pass to recursive function
+            // copy to path to tmpPath
+            List< Integer > tmpPath = new ArrayList< Integer >( path );
+            // Add left node
+            tmpPath.add( h.left.value );
+            getPathSum( h.left, tmpPath, sumSoFar - h.value );
+        }
+
+        //
+        // 3-2. RECURSIVE STEP ( continue searching to the right )
+        //
+        if ( h.right != null ) {
+            // Create a new arraylist to pass to recursive function
+            List< Integer > tmpPath = new ArrayList< Integer >( path );
+            // Add right node
+            tmpPath.add( h.right.value );
+            getPathSum( h.right, tmpPath, sumSoFar - h.value );
+        }
     }
 
     public static void main(String[] args){
@@ -245,12 +328,22 @@ public class BinaryTree {
         tree.addRecursive(tree.root,4);
         tree.addRecursive(tree.root,6);
         tree.addRecursive(tree.root,8);
-        tree.traverseInOrder(tree.root);
+//        tree.traverseInOrder(tree.root);
+//        System.out.println();
+//        tree.DFS(tree.root);
+//        System.out.println();
+//        tree.BFS();
+//        System.out.println();
+//
+//        BinaryTree tree = new BinaryTree();
+//        tree.add(9);
+//        tree.addRecursive(tree.root,7);
+//        tree.addRecursive(tree.root,3);
+//        tree.addRecursive(tree.root,15);
+//        tree.addRecursive(tree.root,20);
+//        tree.traverseInOrder(tree.root);
         System.out.println();
-        tree.DFS(tree.root);
-        System.out.println();
-        tree.BFS();
-        System.out.println();
+        System.out.println(tree.countLeaf(tree.root,0));
 
     }
 }

@@ -3,6 +3,8 @@ package HashMap;
 import java.util.HashMap;
 import java.util.Map;
 
+
+
 public class hashMap_init {
 
     public static void main(String[] args){

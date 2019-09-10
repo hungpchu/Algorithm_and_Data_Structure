@@ -1,0 +1,5 @@
+Time complex:
+access, search: O(n)
+insert, delete:O(1)
+
+Space complex: O(n)
