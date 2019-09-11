@@ -9,3 +9,30 @@ Hand the questions:
 Design: step by step
 1/ scope the problem: ask questions
 2/ make logic assumption
+3/ draw the major component.
+4/ Identify the key issues.
+
+Key concepts:
+
+1/ Horizontal vs Vertical scaling:
+Vertical scaling = increase the resources of a node.
+Example: add additional memory to a server.
+Horizontal scaling = increase the number of nodes.
+Example: add more servers -> decrease the load for 1 server
+
+2/ Load balancer = allow system to to distribute the load evenly so that 1 server not crash and take down the whole system.
+
+3/ Database denormalization and NoSQL = avoid joinings and adding the redundant information into a database to speed up reads.
+NoSQL = no support joins and structure data in different way.
+
+
+4/ Database partitioning = split the data across multiple machines.
+Vertical partitioning = partition by feature. Example: for facebook, partition table for profiles and table for messages.
+Key-based = hash-based using hash table
+directory-based partition: maintain a look up table where the data can be found
+
+5/ Caching = an in-memory cache help speed up results. Simple key-value pairing in the application layer and data store.
+
+When an application requests info, it looks up at cache then database.
+
+6/ Asynchronous process and queues:
