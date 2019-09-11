@@ -2,7 +2,7 @@ package Stack;
 
 import java.util.LinkedList;
 
-public class MinStack {
+public class MinStack<T> {
 
     class MinStackNode {
         int val;
@@ -78,9 +78,10 @@ public class MinStack {
         min.push(3);
         min.push(4);
         min.push(10);
-        min.push(-6);
+        min.push(6);
         min.push(40);
         min.push(1);
+        min.pop();
        System.out.println( min.getMin());
         System.out.println( min.getMax());
     }

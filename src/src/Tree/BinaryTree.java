@@ -276,6 +276,39 @@ public class BinaryTree {
         return finalPathsList;
     }
 
+    public Node deleteNodeKey(Node root, int key){
+            if(root == null) return null;
+            if(key < root.value) root.left = deleteNodeKey(root.left,key);
+            else if (key > root.value) root.right = deleteNodeKey(root.right,key);
+            else{
+                // Case 2: 1 child so check for each side.
+                if (root.right == null) return root.left;
+                if (root.left == null) return root.right;
+
+                // Case 3: 2 children then goes all the way to left in the inorder
+                // to take the value
+                root.value = minValue(root.right);
+                // then goes to the right to delete that min value
+                root.right = deleteNodeKey(root.right,root.value);
+            }
+
+            return root;
+    }
+
+    public int minValue(Node root)
+    {
+        if (root == null ) return 0;
+        if (root.left == null) return root.value;
+        return minValue(root.left);
+    }
+
+    public int maxValue(Node root)
+    {
+        if (root == null ) return 0;
+        if (root.right == null) return root.value;
+        return minValue(root.right);
+    }
+
     // 4. FROM 1, 2, 3 you would know what to pass as argument to recursive function
     public void getPathSum( Node h, List< Integer > path, int sumSoFar ) {
         //
@@ -328,7 +361,11 @@ public class BinaryTree {
         tree.addRecursive(tree.root,4);
         tree.addRecursive(tree.root,6);
         tree.addRecursive(tree.root,8);
-//        tree.traverseInOrder(tree.root);
+        tree.traverseInOrder(tree.root);
+        tree.deleteNodeKey(tree.root,7);
+        System.out.println();
+        tree.traverseInOrder(tree.root);
+    //    System.out.println(tree.minValue(tree.root));
 //        System.out.println();
 //        tree.DFS(tree.root);
 //        System.out.println();
