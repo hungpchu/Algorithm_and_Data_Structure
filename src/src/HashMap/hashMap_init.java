@@ -11,6 +11,8 @@ public class hashMap_init {
         HashMap<String,Integer> hm = new HashMap<>();
         hm.put("hung", 1997);
         hm.put("chu", 1998);
+        hm.remove("hung");
+        hm.size();
 
         for(Map.Entry<String,Integer> entry: hm.entrySet()){
             System.out.println(entry.getKey() + " = " + entry.getValue());

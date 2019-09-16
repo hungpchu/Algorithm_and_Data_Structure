@@ -18,8 +18,9 @@ public class string_permutation {
 
     public static void main(String[] args){
         permutation("abc","");
-        System.out.println("abc".substring(0,0));
+        System.out.println("abc".substring(1) + "abc".substring(0,0));
         System.out.println("abc".substring(0));
+        System.out.println("cde".substring(1) + "de".substring(0,0));
     }
 
 }
