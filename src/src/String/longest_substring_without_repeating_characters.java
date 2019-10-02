@@ -15,12 +15,12 @@ public class longest_substring_without_repeating_characters {
             max = Math.max(max,end - start + 1);
             end++;
         }
-
+//System.out.println("Start = " +start);
         return max;
     }
 
     public static void main(String[] args){
-        String s = "dvdf";
+        String s = "dvgfvdfebcd";
         System.out.println("length = "+ longestSubstring(s));
     }
 }

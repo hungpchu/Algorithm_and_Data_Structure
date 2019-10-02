@@ -1,0 +1,33 @@
+A graph = set of vertices and a collection of edges that connect a pair of vertices
+
+Anomalies: self-loop and parallel edge
+
+An edge connect 2 vertices = vertices are adjacent to one other, edge is incident to both vertices
+
+Degree of vertex = number of edges incident to it
+
+Subgraph = subset of graph's edge that make up graph
+
+A path = sequence of vertices connect by edges.
+
+simple path = one with no repeated vertices.
+
+A cycle is a path with at least 1 edge whose first and last vertices are the same ( can be more then 2 edges connect to the same first and last vertices)
+
+A simple cycle = cycle with no repeated edge of vertices(less or equal then 2 edges connect to same last and first vertices).
+
+A connected graph = there is a path from every vertex to every other vertex in the graph.
+
+A not-connected graph = consist of a set of connected components.
+
+Connected component = maximal connected subgraph.
+
+An acyclic graph = graph with no cycles.
+
+Tree = an acyclic connected graph.
+
+Forest = disjoint set of trees.
+
+Spanning tree of connect graph = subgraph contains all of the graph's vertices and is a single tree.
+
+Spanning forest = union of spanning trees
