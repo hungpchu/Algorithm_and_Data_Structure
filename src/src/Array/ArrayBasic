@@ -2,3 +2,8 @@ Time complexity:
 access: O(1)
 search, insert, delete: O(n)
 Space complexity = O(n)
+
+Trick:
+1/ ALways sort using merge sort.
+2/ Using 2 pointer: low from the beginning and high from the end.
+

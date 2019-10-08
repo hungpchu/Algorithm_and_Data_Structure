@@ -18,9 +18,9 @@ public class Reverse_LinkedList {
         ll1.addAtTail(6);
         ll1.addAtTail(7);
 
-
-        ll.printList();
-        ll1.printList();
+//
+//        ll.printList();
+//        ll1.printList();
     }
 
 }

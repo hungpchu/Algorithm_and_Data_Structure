@@ -33,6 +33,7 @@ public Node createNode(Object dat){
 
 }
 
+
     public void addAtHead(Object dat)
     {
         Node temp = head;
@@ -53,7 +54,7 @@ public Node createNode(Object dat){
         numNodes++;
     }
 
-    public  void printList()
+    public  void printList(Node head)
     {
         Node temp = head;
         while(temp != null)
@@ -97,6 +98,18 @@ public Node createNode(Object dat){
         }
 
         return slow.getData();
+    }
+
+    public  Node  getMiddleNode(Node head){
+        if (head == null) return head;
+
+        Node slow = head, fast = head;
+
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 
     /***
@@ -149,6 +162,56 @@ public Node createNode(Object dat){
     }
 
 
+    public Node mergeSort(Node head){
+        if (head == null || head.next == null) return head;
+        Node middle = getMiddleNode(head);
+        Node middleNext =  middle.next;
+        middle.next = null;
+        Node left = mergeSort(head);
+        Node right = mergeSort(middleNext);
+
+        Node result = sortedMerge(left,right);
+        return result;
+
+    }
+
+    public Node sortedMerge(Node a, Node b)
+    {
+         Node result = null;
+        /* Base cases */
+        if (a == null)
+            return b;
+        if (b == null)
+            return a;
+
+        /* Pick either a or b, and recur */
+        if ((int)a.data <= (int)b.data) {
+            result = a;
+            result.next = sortedMerge(a.next, b);
+        }
+        else {
+            result = b;
+            result.next = sortedMerge(a, b.next);
+        }
+        return result;
+    }
+
+    public Node merge(Node left, Node right){
+        if(left == null) return right;
+        if(right == null ) return left;
+        Node result = null;
+            if ( (int) left.data < (int) right.data) {
+                result = left;
+                result.next = merge(left.next,right);
+            }else{
+                result = right;
+                result.next = merge(right.next,left);
+            }
+
+        return result;
+    }
+
+
 
 
 
@@ -159,21 +222,24 @@ public Node createNode(Object dat){
         ll.addAtTail(7);
         ll.addAtTail(4);
 
-        LinkedListImplementation ll1 = new LinkedListImplementation();
-        ll1.addAtHead(4);
-        ll1.addAtTail(7);
-        ll1.addAtTail(6);
+        ll.mergeSort(ll.head);
+        ll.printList(ll.head);
 
-
-        ll.printList();
-        ll1.printList();
-
-        Node result = ll.add2Number(ll1.head,ll.head);
-        System.out.println(ll1.sizeRecursion(result));
-        while(result != null){
-            System.out.print(result.getData() + " ");
-            result = result.next;
-        }
+//        LinkedListImplementation ll1 = new LinkedListImplementation();
+//        ll1.addAtHead(4);
+//        ll1.addAtTail(7);
+//        ll1.addAtTail(6);
+//
+//
+//        ll.printList();
+//        ll1.printList();
+//
+//        Node result = ll.add2Number(ll1.head,ll.head);
+//        System.out.println(ll1.sizeRecursion(result));
+//        while(result != null){
+//            System.out.print(result.getData() + " ");
+//            result = result.next;
+//        }
     }
 
 }

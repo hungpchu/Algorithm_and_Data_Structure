@@ -230,17 +230,34 @@ public class BinaryTree {
         }
     }
 
+
+
     public static int countLeaf(Node root,int sum){
         if(root == null) return sum;
-        if(root.left != null){
-            if(root.left.right == null && root.left.right == null) sum += 1;
-            sum = countLeaf(root.left,sum);
-        }
+        if(root.left == null && root.right == null) sum++;
+        if(root.left != null) sum = countLeaf(root.left,sum);
+        if(root.right != null ) sum = countLeaf(root.right,sum);
+        return sum;
+    }
 
-        if(root.right != null){
-            if(root.left.right == null && root.right.right == null) sum += 1;
-            sum = countLeaf(root.left,sum);
+    public static int countLeftLeafs(Node root, int sum){
+        if(root == null) return sum;
+        if(root.left != null){
+            if(root.left.left == null && root.left.right == null){
+                sum++;
+                sum = countLeftLeafs(root.left,sum);
+            }else sum = countLeftLeafs(root.left,sum);
         }
+        if(root.right != null) sum = countLeftLeafs(root.right,sum);
+
+        return sum;
+    }
+
+    public static int countAllNodes(Node root, int sum){
+        if(root == null ) return sum;
+        sum++;
+        if(root.left != null) sum = countAllNodes(root.left,sum);
+        if(root.right != null ) sum = countAllNodes(root.right,sum);
         return sum;
     }
 
@@ -282,6 +299,7 @@ public class BinaryTree {
             else if (key > root.value) root.right = deleteNodeKey(root.right,key);
             else{
                 // Case 2: 1 child so check for each side.
+                // assign value value to root.left so it will override the deleted node
                 if (root.right == null) return root.left;
                 if (root.left == null) return root.right;
 
@@ -361,8 +379,9 @@ public class BinaryTree {
         tree.addRecursive(tree.root,4);
         tree.addRecursive(tree.root,6);
         tree.addRecursive(tree.root,8);
+        tree.addRecursive(tree.root,9);
         tree.traverseInOrder(tree.root);
-        tree.deleteNodeKey(tree.root,7);
+        //tree.deleteNodeKey(tree.root,8);
         System.out.println();
         tree.traverseInOrder(tree.root);
     //    System.out.println(tree.minValue(tree.root));

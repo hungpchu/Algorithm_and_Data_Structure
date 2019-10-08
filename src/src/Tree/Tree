@@ -4,6 +4,9 @@ Tree
 Tree = composed of nodes
 
 Binary tree = each node has  <= 2 children.
+The size of a tree is its number of nodes.
+The depth of a node in a tree is the number of links on the path from it to the root.
+The height of a tree is the maximum depth among its nodes.
 
 leaf node if it has no children.
 
