@@ -30,4 +30,4 @@ Forest = disjoint set of trees.
 
 Spanning tree of connect graph = subgraph contains all of the graph's vertices and is a single tree.
 
-Spanning forest = union of spanning trees
+Spanning forest = union of spanning trees of its connected component
