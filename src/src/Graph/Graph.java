@@ -3,8 +3,9 @@ package Graph;
 import java.util.ArrayList;
 import java.util.List;
 import Graph.DepthFirstSearch;
+
 // space: E + V
-public class Graph {
+public class Graph  {
     private final int V;
     private int E;
     public List<Integer>[] adj;
@@ -26,6 +27,7 @@ public class Graph {
     }
 
     public void show(){
+        System.out.println("Graph in the form of adjacency list: ");
         for(int v = 0; v < V; v++){
             System.out.print(v + " : ");
             for(int adjV: adj[v]) System.out.print(adjV + ",");
@@ -34,7 +36,8 @@ public class Graph {
 
     }
 
-    public void findAllPath(DepthFirstSearch dfs,int s) {
+    public void findAllPathforDFS(DepthFirstSearch dfs,int s) {
+        System.out.println("Depth First Search Path: ");
         for (int v = 0; v < V; v++) {
             System.out.print("Path from " + s + " to " + v + " : ");
             if (dfs.hasPathTo(v)) {
@@ -46,6 +49,23 @@ public class Graph {
             }else System.out.print("No path");
             System.out.println();
         }
+        System.out.println();
+    }
+
+    public void findAllPathforBFS(BreathFirstSearch bfs,int s) {
+        System.out.println("Breath First Search Path: ");
+        for (int v = 0; v < V; v++) {
+            System.out.print("Path from " + s + " to " + v + " : ");
+            if (bfs.hasPathTo(v)) {
+                for (int x : bfs.pathTo(v)) {
+                    if (x == s) System.out.print(x);
+                    else System.out.print("-" + x);
+                }
+
+            }else System.out.print("No path");
+            System.out.println();
+        }
+        System.out.println();
     }
 
     public static void main(String[] args){
@@ -63,9 +83,11 @@ public class Graph {
         graph.addEdge(9,11);
         graph.addEdge(7,8);
         graph.addEdge(5,3);
+        graph.addEdge(5,9);
         graph.show();
         DepthFirstSearch dfs = new DepthFirstSearch(graph,0);
-        graph.findAllPath(dfs,0);
-
+        BreathFirstSearch bfs = new BreathFirstSearch(graph,0);
+        graph.findAllPathforDFS(dfs,0);
+        graph.findAllPathforBFS(bfs,0);
         }
 }

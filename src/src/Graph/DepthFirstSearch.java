@@ -21,15 +21,32 @@ public class DepthFirstSearch {
         marked = new boolean[graph.V()];
         edgeTo = new int[graph.V()];
         this.s = s;
-        dfs(graph,s);
+        dfsIteration(graph,s);
     }
 
     private void dfs(Graph graph, int v){
         marked[v] = true;
+        //System.out.println(" v = " + v);
         for(int neighbor: graph.adj[v]){
             if(!marked[neighbor]){
                 edgeTo[neighbor] = v;
                 dfs(graph,neighbor);
+            }
+        }
+    }
+
+    private void dfsIteration(Graph graph,int v){
+        marked[v] = true;
+        Stack<Integer> st = new Stack<>();
+        st.push(v);
+        while(!st.isEmpty()){
+            v = st.pop();
+            for(int neighbor: graph.adj[v]){
+                if(!marked[neighbor]){
+                    marked[neighbor] = true;
+                    edgeTo[neighbor] = v;
+                    st.push(neighbor);
+                }
             }
         }
     }
