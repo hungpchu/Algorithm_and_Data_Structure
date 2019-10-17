@@ -158,6 +158,79 @@ class linkedList {
 
     }
 
+
+
+    public node mergeSortHungChu(node head){
+        if(head == null ) return null;
+        if(head.next == null ) return head;
+        node left = head;
+        node middle =  middle(head);
+        node right = middle.next;
+        while(head != middle) head = head.next;
+        head.next = null;
+        // until the end
+        node leftStart = mergeSortHungChu(left);
+        node rightStart = mergeSortHungChu(right);
+        node result = sort(leftStart,rightStart);
+        return result;
+    }
+
+    public node sort(node l1, node l2){
+        // base case: if the 2 lists are null;
+        if(l1 == null && l2 == null) return null;
+        // if the l1 is null return l2;
+        if(l1 == null) return l2;
+        // if l2 is null then return l1;
+        if(l2 == null ) return l1;
+        // current for looping through list
+
+        node current = new node(0);
+        // check for the value of current
+        if(l1.val < l2.val){
+            current = l1;
+            l1= l1.next;
+        }
+        else{
+            current = l2;
+            l2 = l2.next;
+        }
+        // store the head of current to result
+        node result = current;
+        // loop until both of l1 and l2 is null
+        while(l1 != null || l2 != null){
+            // if l1 is not null and l2 is null then return
+            if(l2 == null && l1 != null) {
+                current.next = l1;
+                break;
+            }else if(l1 == null && l2 != null){
+                current.next = l2;
+                break;
+            }
+            if(l1.val < l2.val){
+                current.next = l1;
+                l1 = l1.next;
+            }
+            else{
+                current.next = l2;
+                l2=l2.next;
+            }
+            current = current.next;
+        }
+        return result;
+    }
+
+    public node middle(node head){
+        if(head == null) return null;
+        node middle = head;
+        node last = head;
+        while( last != null){
+            if(last.next == null || last.next.next == null) return middle;
+            middle = middle.next;
+            last = last.next.next;
+        }
+
+        return middle;
+    }
     public static void main(String[] args)
     {
 
@@ -172,13 +245,17 @@ class linkedList {
         li.push(20);
         li.push(3);
         li.push(2);
+        li.push(29);
+        li.push(4);
+
 
         System.out.print(li.head.val);
 
         // Apply merge Sort
-        li.head = li.mergeSort(li.head);
+        li.head = li.mergeSortHungChu(li.head);
         System.out.print("\n Sorted Linked List is: \n");
         li.printList(li.head);
+//        System.out.println(" middle = " + li.middle(li.head).val);
     }
 }
 

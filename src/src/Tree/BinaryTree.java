@@ -370,6 +370,19 @@ public class BinaryTree {
         }
     }
 
+    public Node deepestNode(Node root){
+        if(root == null ) return null;
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            root = queue.remove();
+            if(root.left!= null) queue.add(root.left);
+            if(root.right != null) queue.add(root.right);
+        }
+
+        return root;
+    }
+
     public static void main(String[] args){
         BinaryTree tree = new BinaryTree();
         tree.add(5);
@@ -400,6 +413,7 @@ public class BinaryTree {
 //        tree.traverseInOrder(tree.root);
         System.out.println();
         System.out.println(tree.countLeaf(tree.root,0));
+        System.out.println(tree.deepestNode(tree.root).value);
 
     }
 }
