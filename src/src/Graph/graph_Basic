@@ -31,3 +31,17 @@ Forest = disjoint set of trees.
 Spanning tree of connect graph = subgraph contains all of the graph's vertices and is a single tree.
 
 Spanning forest = union of spanning trees of its connected component
+
+edge-weighted graph =  graph where edge are associated or cosr
+
+spanning tree = connected subgraph with no cycle that include all vertices
+
+minimum spanning tree = a spanning tree whose weight is the min
+
+Principle of tree:
+1/ Adding an edge connecting 2 vertices in a tree creates a unique cycle
+2/ Removing an edge from a tree breaks tree into 2 separate sub-tree
+
+Cut of a graph(MST) = partition MST's vertices into 2 non empty disjoint sets
+
+Crossing edge of a cut = edge connecting a vertex in 1 set with a vertex in the other

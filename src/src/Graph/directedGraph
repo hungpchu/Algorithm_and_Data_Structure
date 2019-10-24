@@ -1,0 +1,43 @@
+A directed graph = set of vertices and a collection of directed edges.
+
+outdegree of a vertex = number of edges going out from it
+
+indegree of a vertex = number of edge going in to it.
+
+first vertex = head
+
+second vertex = tail
+
+directed cycle = a directed path with at least one edge whose first and last
+vertexes are the same
+
+simple cycle = cycle with no repeated edges or vertices
+
+the length of a path or cycle is the number of its edge
+
+Topological sort = given the digraph, put the vertices in order such that
+all the direct edges point from earliest vertices to the later vertex
+
+directed acyclic graph (DAG) = a digraph with no directed cycles
+
+A digraph has a topological order <=> it is a DAG
+
+2 vertexes are strongly connected <=> they are mutually reachable, there is a directed path from v to w and w to v
+                strongly connected <=> there is a directed cycle that contains them both
+Digraph is strongly connected if all vertices are strongly connected to one other
+
+Strongly connected component = maximal subset of vertices that are strongly connected to one another
+
+Transitive closure of a digraph G = digraph with the same set of vertices but an edge from v to w in transitive closure <=> w is reachable from v in G
+
+SHORTEST PATHS:
+
+Shortest path from vertex s to vertex t = directed path from s to t with minimum weighted
+
+Properties of shortest path:
+Paths are directed
+The weight are not the distance
+Not all vertices need to be reached
+
+Shortest path tree for a source s = subgraph containing all the vertices reachable from s and form the directed tree rooted at s and every tree path is a
+shortest path in graph.

@@ -35,13 +35,15 @@ public class UnionFind {
         // if rootP is the root of root then no need to link
         if (rootP == rootRoot) return;
         // set root of p to the root of root
-        id[p] = root;
+        id[p] = rootRoot;
 
         // find all node have p as root and change them to net root of p
         for(int i = 0; i < id.length; i++){
-            if(id[i] == p) id[i] = root;
+            if(id[i] == rootP) id[i] = rootRoot;
         }
     }
+
+    public boolean isConnected(int p, int q){return findRoot(p) == findRoot(q);}
 
     public void show(){
         for(int i = 0; i < id.length;i++) System.out.print(id[i] + " ");

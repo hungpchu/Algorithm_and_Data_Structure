@@ -6,6 +6,8 @@ import java.util.Stack;
 
 /***
  * Usage: find connectivity + check all path from source to sink
+ * DFS is faster then Union-Find in the case of there is already graph representation
+ * Union-Find is faster if we only need to determine connectivity
  */
 public class DepthFirstSearch {
     // marked to check all visited vertex
@@ -14,6 +16,8 @@ public class DepthFirstSearch {
     private int[] edgeTo;
     // s means source
     private final int s;
+
+    private int countConnectCompoonent;
 
     // constructor to init all marked + edgeTo + s
     // then using dfs to visit all the vertex and check path from source to all other vertex

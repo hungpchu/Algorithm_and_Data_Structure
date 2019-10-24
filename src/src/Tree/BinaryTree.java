@@ -383,6 +383,38 @@ public class BinaryTree {
         return root;
     }
 
+    public void nodeAtGivenHeight(Node root, int height){
+        if(root == null) return;
+        List<Node> list = new ArrayList<>();
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        int currentH = 1;
+        while(!queue.isEmpty()){
+            int sizeQueue = queue.size();
+            if(currentH == height){
+                while(sizeQueue > 0){
+                    root = queue.remove();
+                    list.add(root);
+                    sizeQueue--;
+                }
+                break;
+            }else{
+                while(sizeQueue > 0){
+                    root = queue.remove();
+                    if(root.left != null) queue.add(root.left);
+                    if(root.right != null) queue.add(root.right);
+                    sizeQueue--;
+                }
+            }
+            currentH++;
+        }
+        System.out.println();
+        System.out.println("Node at the given " + height + " is: ");
+        if(list.size() > 0){
+            for(Node node: list) System.out.print(node.value + ",");
+        }else System.out.println("There is no node at this height");
+    }
+
     public static void main(String[] args){
         BinaryTree tree = new BinaryTree();
         tree.add(5);
@@ -397,6 +429,7 @@ public class BinaryTree {
         //tree.deleteNodeKey(tree.root,8);
         System.out.println();
         tree.traverseInOrder(tree.root);
+        tree.nodeAtGivenHeight(tree.root,5);
     //    System.out.println(tree.minValue(tree.root));
 //        System.out.println();
 //        tree.DFS(tree.root);
