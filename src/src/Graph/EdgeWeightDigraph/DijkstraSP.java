@@ -6,6 +6,8 @@ import java.util.*;
  * Time: ElogV -> compare of edge in priority queue
  * Space: V -> number of vertex
  * Main idea: add the next vertex that is closest to the source
+ * Problem statements: Given an edge-weighted digraph and a source vertex s
+ * -> find a directed path from s to a given target s such that total weight is min
  */
 public class DijkstraSP {
 

@@ -16,6 +16,9 @@ public class AcyclicLP {
         Arrays.fill(distTo, Double.NEGATIVE_INFINITY);
         distTo[start] = 0.0;
         TopologicalSort top = new TopologicalSort(graph);
+        System.out.print(" topo order:");
+        for(int no :top.order()) System.out.print(no + ",");
+        System.out.println();
         for(int node: top.order())  relax(graph,node);
     }
 
