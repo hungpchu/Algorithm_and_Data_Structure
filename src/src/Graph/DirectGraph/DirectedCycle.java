@@ -41,10 +41,13 @@ public class DirectedCycle {
             }else if (onStack[neigh]){
 //                System.out.println("neigh = "+ neigh + " node = "+ node);
                 // put all the vertex in the cycle to the stack
-                for(int vertex = node; vertex != neigh; vertex = parent[vertex]) cycle.push(vertex);
-                cycle.push(neigh);
-                cycle.push(node);
-                if(cycle.size() <= 3) cycle = new Stack<>();
+                 int v = node;
+                 cycle.push(v);
+                 while(v != neigh){
+                     v = parent[v];
+                     cycle.push(v);
+                 }
+                if(cycle.size() < 3) cycle = new Stack<>();
                 else {
                     System.out.print("The cycle is ");
                     for (int vertex : cycle) System.out.print(vertex + ",");

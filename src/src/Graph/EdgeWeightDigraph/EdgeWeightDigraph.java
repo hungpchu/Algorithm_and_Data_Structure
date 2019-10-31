@@ -1,6 +1,8 @@
 package Graph.EdgeWeightDigraph;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class EdgeWeightDigraph {
@@ -16,7 +18,8 @@ public class EdgeWeightDigraph {
     }
 
     public void addEdge(DirectedEdge edge){
-        adj[edge.from()].add(edge);
+        // add to the beginning like the property of bag
+        adj[edge.from()].add(0,edge);
         E++;
     }
 

@@ -1,0 +1,22 @@
+Priority queue = implemented using binary heap where items are kept in array
+-> remove and insert in linear time
+Application: job schedule where keys relate to priority of what task to be performed first
+
+Binary heap support the basic priority queue operation
+
+Binary tree = heap-ordered if the key in each node is larger then or equal to key in child's node
+
+-> moving up getting increasing or equal sequence of keys
+-> moving down gets the decreasing or equal sequence of keys
+-> largest key in heap-order is at root
+
+Binary heap = collection of keys arranged in complete heap-ordered binary tree, represented in level
+order in array(not using the first entry)
+
+Node in position k will have parent in position k/2
+Node parent in position k will have 2 child at 2k and 2k + 1
+
+the height of complete binary tree of size N is logN
+
+
+Priority(heap) = good for huge number of data

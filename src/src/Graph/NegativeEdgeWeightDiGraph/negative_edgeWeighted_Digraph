@@ -1,0 +1,5 @@
+When the negative weights present, low-weight shortest paths have more edges than higher-weight paths.
+
+Negative cycle in an edge weight digraph is a directed cycle whose total weight is negative
+
+There exists a shortest path from s to v in an edge-weighted digraph if and only if there exists at least one directed path from s to v and no vertex on any directed path from s to v is on a negative cycle.

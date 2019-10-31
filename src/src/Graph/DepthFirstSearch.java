@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Stack;
 
 /***
+ * Time: O(V+E)
+ * Space:O(V)
  * Usage: find connectivity + check all path from source to sink
  * DFS is faster then Union-Find in the case of there is already graph representation
  * Union-Find is faster if we only need to determine connectivity

@@ -5,9 +5,16 @@ import java.util.*;
 /***
  * Time: ElogV -> compare of edge in priority queue
  * Space: V -> number of vertex
- * Main idea: add the next vertex that is closest to the source
- * Problem statements: Given an edge-weighted digraph and a source vertex s
- * -> find a directed path from s to a given target s such that total weight is min
+ *
+ * Main idea: greedy and dynamic programming
+ *  greedy since it choose the next node to relax and explore neighbor node
+ *   base on the  min edge associated with that node from the PriorityQueue
+ *  dynamic since it store all the relax edge in the priority queue
+ *
+ *  Problem statements: Given an edge-weighted digraph and a source vertex s
+ *  -> find a directed path from s to a given target s such that total weight is min
+ *
+ *  Restriction: Positive edge weights.
  */
 public class DijkstraSP {
 
