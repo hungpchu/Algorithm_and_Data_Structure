@@ -6,3 +6,13 @@ Solution:
     3/ After 30 minute, rope 1 is completely burn and we know we have 30 minute to burn the other un burned half
     of rope 2
     4/ We burn the other end of rope 2 which will take 15 minute
+
+2/ Eight are of the same weight, and one is heavier. You are given a balance which tells you only whether
+the left side or the right side is heavier. Find the heavy ball in just two uses of the scale.
+
+Solution:
+    Divide the balls into sets of three items each.
+    With a rule: given N balls, where N is divisible by 3, one use of the scale will point us to a set of X balls with the heavy ball.
+    For the final set of 3 balls, put 1 balls off and weight 2 balls-> if 2 balls are equal then pick the 3rd one
+
+
