@@ -1,0 +1,62 @@
+Object = state + identity + behaviour
+state = value of objects data type
+identity = separate this object from other
+behaviour = effect of objects operation
+
+Reference = way to access an object
+
+Primitive type = variable associated with values
+Reference types for object(non-primitive):
+1/ Variable are associated with reference to object, not the data-type
+
+Constructor = has no data type since it always returns a reference to an object
+Use new():
+1/ allocate memory space on the stack for object
+2/ invoke constructor to init the value
+3/ return the reference to object
+For example: String Hung = new String() with Hung is the reference to object
+
+Create copy from existing references:
+String Hung2 = Hung
+-> Hung2 point to the same object
+
+Create new copy pointing to different instance of  object:
+String Hung2 = new String();
+
+
+In Java, all the values if any nonprimitive type is object
+
+Implement an abstract data type:
+public: specified in API
+private: not available to client
+
+1/ Instance variable =
+    1/ state of object
+    2/ global variable in the object
+        private int count;
+
+2/ Constructor =
+    1/ can refer directly to the instance variable and has no return type
+    2/ Initialize the instance variable
+    3/ create object and provide client the reference to it
+    4/ Overload:
+        public Hung(){} -> default constructor
+        public Hung(int age, String name){}
+
+3/ Instance methods
+    1/ Behaviour of object
+    2/ access and operate on the instance variable
+
+Memory management:
+1/ easy for the primitive type since all information needed for memory allocation is known at the compile time
+-> Java take care of reserve space
+2/ more complex for object since java can allocate the memory for object when it is created but not know when to
+free the memory associated with each object
+
+Immutable:
+1/ using final -> promise to assign it a value only once
+2/ final is only for the primitive type not the reference type
+3/ instance variable of object has final then it always refer to the same object but the value of it can change
+
+
+

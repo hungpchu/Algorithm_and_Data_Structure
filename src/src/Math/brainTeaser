@@ -1,0 +1,8 @@
+1/ You have 2 ropes and each takes 1 hour to burn. How to use them to time 15 minute?
+
+Solution:
+    1/ Light rope 1 at both end take 30 minute with both end gone
+    2/ Light rope 2 at 1 end take 30 minute with one end left
+    3/ After 30 minute, rope 1 is completely burn and we know we have 30 minute to burn the other un burned half
+    of rope 2
+    4/ We burn the other end of rope 2 which will take 15 minute

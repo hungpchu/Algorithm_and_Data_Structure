@@ -1,11 +1,8 @@
 package Queue;
 
-import Stack.MinStack;
-
 import java.util.LinkedList;
-import Stack.MinStack;
 
-public class queueImplement<T> {
+public class MinQueue<T> {
 
     public int queueSize;
     public QueueElement head;
@@ -26,9 +23,8 @@ public class queueImplement<T> {
         }
     }
 
-    MinStack<QueueElement> minStack;
     LinkedList<QueueElement> queue;
-    public queueImplement(){
+    public MinQueue(){
          queue = new LinkedList<>();
     }
     public void printQueue(){
@@ -92,15 +88,14 @@ public class queueImplement<T> {
     }
 
     public static void main(String[] args){
-        queueImplement queue = new queueImplement();
-        queue.enQueue(2);
-        queue.enQueue(3);
-        queue.enQueue(4);
-//        System.out.println(queue.getMax() + " " + queue.getMin());
-//        queue.dequeue();
-//        System.out.println(queue.getMax() + " " + queue.getMin());
-//        queue.dequeue();
-        System.out.println(queue.last.max + " " + queue.last.min);
-        queue.printQueue();
+        MinQueue minQueue = new MinQueue();
+        minQueue.enQueue(2);
+        minQueue.enQueue(3);
+        minQueue.enQueue(4);
+        minQueue.enQueue(44);
+        minQueue.dequeue();
+
+        System.out.println(minQueue.last.max + " " + minQueue.last.min);
+        minQueue.printQueue();
     }
 }

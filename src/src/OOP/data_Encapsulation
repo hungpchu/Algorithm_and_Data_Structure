@@ -1,0 +1,7 @@
+data encapsulation is kinda the same with data abstraction
+
+Data encapsulation:
+1/ encapsulates the data types within their implementation
+-> separate the client with the implementation
+2/ independent between the client and implement
+3/ Limit the potential errors

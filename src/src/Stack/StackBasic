@@ -3,3 +3,6 @@ access, search: O(n)
 insert, delete:O(1)
 
 Space complex: O(n)
+
+Stack:
+1/ collection that base on the last in first out policy(LIFO)

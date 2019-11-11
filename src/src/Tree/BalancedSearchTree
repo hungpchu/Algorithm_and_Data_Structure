@@ -1,0 +1,51 @@
+Type of binary search tree where cost are certainly logarithm
+
+Maintaining perfect balance for dynamic insert is expensive
+
+Have balance in search trees  = allow the nodes in our tree to hold more than one key
+
+2-3 search tree is tree that has
+2 node (2 nodes since it has 2 link to child node) with (1 key +  1 associated value, 2 links with left link to a 2-3 tree with smaller key
+and right link to a 2-3 with larger key
+
+3 node (3 nodes since it has 3 link to child node) with (2 keys + 2 associated values) and 3 links with the left link with smaller keys,
+middle link to a 2-3 search tree with keys between the nodes keys and a right link to a 2-3 tree with a larger keys
+
+A perfect balanced 2-3 search tree = the one whose null link are all the same distance from the root.
+
+2-3 trees grow up from the bottom
+
+Search and insert in a 2-3 trees are O(logN)
+
+The height of 2-3 tree  = O(logN)
+
+Red black tree:
+
+ Links have 2 different type:
+
+Red link = bind together 2-nodes to represent 3-nodes,
+Black link = binds together 2-3 trees
+
+We represent 3-nodes as two 2-nodes connected by a single red link
+leans left (1 of the 2-nodes is the left child of the other)
+
+Red-black Bst has conditions:
+1/ Red link lean left
+2/ No node has 2 red links connected to it
+3/ The tree has perfect black balance: every path from the root to a null link
+has the same number of black links
+
+Not allowed:
+right leaning 3 node represent
+2 red link in the row
+
+
+A 1-1 correspondence between red-black with 2-3: If we collapse together the nodes connected
+by the red links, the result is 2-3 tree
+
+Red-black tree are both BST and 2-3 tree
+
+The height of a red black BST is no more then 2logN
+
+
+Talk about top-down and bottom-up: https://leetcode.com/articles/introduction-to-n-ary-trees/#1-top-down-solution

@@ -1,0 +1,17 @@
+Program design = process of converting a set of requirements into collection of commands or program that can
+be executed on a computer system
+
+Program = set of instruction that the computer executes to perform the meaningful work
+
+Top down design = approach to program design that start with the general concept first and
+repeatedly breaks it down in to its component parts.
+For example:
+Create the prime factorization of 1540. Then the step will be
+1/ 1540
+2/ 2 x 770
+3/ 2 x 2 x 385
+
+Bottom up Design = starts with the component parts and repeatedly combines them to achieve
+the general concept
+For instance from the above example:
+1/ 2 x 2 x 5 x 7 x 11

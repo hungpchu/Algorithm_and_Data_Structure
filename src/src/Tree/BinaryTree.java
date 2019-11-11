@@ -6,6 +6,7 @@ public class BinaryTree {
 
     Node root;
 
+
     class Node {
         int value;
         Node left;
@@ -415,7 +416,10 @@ public class BinaryTree {
         }else System.out.println("There is no node at this height");
     }
 
+
+
     public static void main(String[] args){
+        int max = 0;
         BinaryTree tree = new BinaryTree();
         tree.add(5);
         tree.addRecursive(tree.root,3);
@@ -447,6 +451,7 @@ public class BinaryTree {
         System.out.println();
         System.out.println(tree.countLeaf(tree.root,0));
         System.out.println(tree.deepestNode(tree.root).value);
+
 
     }
 }

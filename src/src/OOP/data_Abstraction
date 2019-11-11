@@ -1,0 +1,19 @@
+Data type = set of values and operations
+Java program is based on building the reference types with the Java class
+-> known as OOP with the concept of object - an entity holds data type value
+-> Define own data type
+
+ADT-Abstract data type is a data type whose representation is hidden from the client
+-> Implement ADT: focus on the data then implement the operations on the data
+
+API for abstract data type:
+1/ operations(instance method) lack static modifier since its main purpose is operate on the data
+
+Static method:
+1/ implement function
+2/ start with a class name
+
+
+Non-static method:
+1/ implement data-type operations
+2/ start with an object name

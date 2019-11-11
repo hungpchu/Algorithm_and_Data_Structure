@@ -1,4 +1,4 @@
-package Recursive;
+package Recursion;
 
 public class countStep {
 

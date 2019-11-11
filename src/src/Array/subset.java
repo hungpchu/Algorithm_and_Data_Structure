@@ -17,7 +17,7 @@ public class subset {
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();
         // add the empty set into the res
         res.add(new ArrayList<>());
-
+        System.out.println("[]");
         for(int n : nums){
             // create newest level each time of checking next number for avoiding adding duplicate set
             ArrayList<ArrayList<Integer>> level = new ArrayList<>();
@@ -27,6 +27,9 @@ public class subset {
                 ArrayList<Integer> newset = new ArrayList<>(prevSet);
                 // add new number into the newSet
                 newset.add(n);
+                System.out.print("[");
+                for(int num: newset ) System.out.print(num + ",");
+                System.out.println("]");
                 // add newSet into the newLevel
                 level.add(newset);
             }
@@ -39,9 +42,9 @@ public class subset {
     public static void main(String[] args){
         int[] nums = {1,2,3};
         ArrayList<ArrayList<Integer>> subset = subsets(nums);
-        for(ArrayList<Integer> sub: subset){
-            for(int num: sub) System.out.print( num + " ");
-            System.out.println();
-        }
+//        for(ArrayList<Integer> sub: subset){
+//            for(int num: sub) System.out.print( num + " ");
+//            System.out.println();
+//        }
     }
 }

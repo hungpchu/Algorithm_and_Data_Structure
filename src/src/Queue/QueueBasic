@@ -3,3 +3,6 @@ access, search: O(n)
 insert, delete:O(1)
 
 Space complex: O(n)
+
+Queue:
+1/ collection that is based on first in first out policy(FIFO)

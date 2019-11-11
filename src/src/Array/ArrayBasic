@@ -7,3 +7,5 @@ Trick:
 1/ ALways sort using merge sort.
 2/ Using 2 pointer: low from the beginning and high from the end.
 
+2D array = array of 1D array
+

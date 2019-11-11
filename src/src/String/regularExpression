@@ -1,0 +1,14 @@
+. (wildcard) represents any single character
+[] represents any of those element [aecv] or range of number [0-9]
+^ represents any character but one of those characters [^09] look for all char but 9 and  0
++ is at least 1 copy
+? is 0 or 1 copy
+
+Data compression
+data is represented in binary -> to be considered as a sequence of bits
+-> can call: bitstream or bytestream
+
+Basic model:
+1/ A compress box transform a bitstream B into compress version C
+2/ An expand box transform C to B
+-> lossless compression with no information to be lost

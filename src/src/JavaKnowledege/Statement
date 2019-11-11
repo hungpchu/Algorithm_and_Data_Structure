@@ -1,0 +1,7 @@
+Java = strongly typed language
+
+1/ Declaration:  int hung;
+2/ Assignment: hung = 16091997;
+3/ Conditionals: if(hung)
+4/ Loops
+5/ Calls and return

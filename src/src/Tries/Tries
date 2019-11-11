@@ -1,0 +1,19 @@
+Trie = a search tree, a data structure built from the characters of the string keys that allow us to use the characters of the search
+key to guide the search
+trie comes from the word retrieval
+
+Basic properties: tries composed of nodes that contains links that are either null or reference to other nodes
+Each node is pointed to by one other node(called parent)
+Root has no nodes pointing to it
+Each node has R link where R is the alphabet size
+Each link corresponds to a character value, since each link points exactly to 1 node
+Store value associated with each key in the last node corresponding to the last character. For example:
+Key = sea with value = 2 then node a will have value = 2
+
+Tries=  R-character alphabet as an R-way trie
+tries node are represented by R links with the character relate to each non null link represent by index
+
+Ternary (chim nhan) search tries :
+ In a TST, each node has a character, 3 links and a value
+ 3 links correspond to keys whose current character are less then, equal or great to. In TST, character appears in nodes
+ Basically implement Tst like binary tree

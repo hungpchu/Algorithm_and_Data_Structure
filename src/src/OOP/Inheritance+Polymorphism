@@ -1,0 +1,35 @@
+Inheritance :
+1/ relationship among objects
+2/ kinda against the data abstraction and encapsulation
+
+subtyping = specify the relationship between unrelated classes by specify in an interface
+a set of common methods that each implementing class must contain
+
+Interface = list of instance methods
+For instance:
+public interface Datable{
+  int month();
+  int year();
+}
+
+Refer to our implemented code:
+public class Date implements Datable{}
+
+Interface inheritance:
+1/ allow client program to manipulate objects of any types that implements the interface
+2/ Basically allow client program to access to the instance variable of object implementing the interface through instance method
+
+Polymorphism:
+Implementing inheritance:
+subclassing:
+1/ enable programmers to change behaviour or add functionality without rewrite the entire class from the beginning
+2/ define a new class(subclass) that inherits instance methods and instance variable from another class(superclass)
+
+Subclass(lop con):
+1/ contains more methods than the superclass(lop me)
+2/ redefine or override methods in the superclass
+Example:
+class Super{}
+class Sub extend Super{}
+
+
