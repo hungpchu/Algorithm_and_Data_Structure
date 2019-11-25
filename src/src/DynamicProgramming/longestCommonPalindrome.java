@@ -8,7 +8,7 @@ public class longestCommonPalindrome {
     public static int LCP(String a, int i, int j){
         // base case when i bigger then j
         if(i > j) return 0;
-        // if i = j then there is palin length = 0
+        // if i = j then there is palin length = 1
         if(i == j) return 1;
 
         if(a.charAt(i) == a.charAt(j)) return 2 + LCP(a,i + 1, j - 1);

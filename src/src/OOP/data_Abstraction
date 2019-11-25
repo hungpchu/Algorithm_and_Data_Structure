@@ -12,8 +12,11 @@ API for abstract data type:
 Static method:
 1/ implement function
 2/ start with a class name
+3/ used within different class
+4/ belong to class
 
 
 Non-static method:
 1/ implement data-type operations
 2/ start with an object name
+3/ belongs to object

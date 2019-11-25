@@ -309,6 +309,41 @@ public class BinarySearchTree {
         return num;
     }
 
+    public void preOrder1(Node root){
+        if(root == null) return;
+        Stack<Node> stack = new Stack<>();
+        stack.add(root);
+        while(!stack.isEmpty()){
+            root = stack.pop();
+            if(root.right != null) {
+                stack.add(root.right);
+//root =root.right;
+            }
+            System.out.print(root.value + " ");
+            if(root.left != null) stack.add( root.left);
+
+        }
+    }
+
+    public void inOrder1(Node root){
+        if(root == null) return ;
+        Stack<Node> stack = new Stack<>();
+        HashSet<Node> hs = new HashSet<>();
+        stack.add(root);
+        while(!stack.isEmpty()){
+            root = stack.peek();
+            while(root.left != null && !hs.contains(root.left)){
+                stack.add(root.left);
+                root = root.left;
+            }
+            hs.add(stack.peek());
+            System.out.print(stack.pop().value + " ");
+            if(root.right != null) stack.add(root.right);
+        }
+    }
+
+
+
     public static void main(String[] args){
         BinarySearchTree bst = new BinarySearchTree();
         bst.putValue(6,6);

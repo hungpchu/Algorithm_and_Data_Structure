@@ -26,6 +26,9 @@ public class MyHashTable<Key,Value>{
 
     public int hash(Key key){
         if(key instanceof String) return hashString((String) key);
+        // hashCode() help key turn to int index
+        // 0x7fffffff avoid negative value
+        // % list.length avoid out of bound
         return (key.hashCode() % 0x7fffffff) % hashTable.length;
 
     }
@@ -97,17 +100,17 @@ public class MyHashTable<Key,Value>{
         System.out.println("My hashTable after delete look like = ");
         for(String key: myHashTable.keys()) System.out.println("The key is " + key + " with the value of " + myHashTable.get(key));
 
-        MyHashTable<Integer,Integer> myHashTable1 = new MyHashTable<>(69);
-        myHashTable1.put(6,9);
-        myHashTable1.put(16,9);
-        myHashTable1.put(19,97);
-        System.out.println("My hashTable integer look like = ");
-        for(int key: myHashTable1.keys()) System.out.println("The key is " + key + " with the value of " + myHashTable1.get(key));
-        System.out.println("Will my hash table have 6? " + myHashTable1.containsKey(6));
-        myHashTable1.remove(6);
-        System.out.println("Will my hash table have 6? " + myHashTable1.containsKey(6));
-        System.out.println("My hashTable1 after delete look like = ");
-        for(int key: myHashTable1.keys()) System.out.println("The key is " + key + " with the value of " + myHashTable1.get(key));
+//        MyHashTable<Integer,Integer> myHashTable1 = new MyHashTable<>(69);
+//        myHashTable1.put(6,9);
+//        myHashTable1.put(16,9);
+//        myHashTable1.put(19,97);
+//        System.out.println("My hashTable integer look like = ");
+//        for(int key: myHashTable1.keys()) System.out.println("The key is " + key + " with the value of " + myHashTable1.get(key));
+//        System.out.println("Will my hash table have 6? " + myHashTable1.containsKey(6));
+//        myHashTable1.remove(6);
+//        System.out.println("Will my hash table have 6? " + myHashTable1.containsKey(6));
+//        System.out.println("My hashTable1 after delete look like = ");
+//        for(int key: myHashTable1.keys()) System.out.println("The key is " + key + " with the value of " + myHashTable1.get(key));
 
 
     }

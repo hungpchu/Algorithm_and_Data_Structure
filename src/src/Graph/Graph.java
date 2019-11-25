@@ -94,6 +94,9 @@ public class Graph  {
 //        graph.addEdge(5,9);
 //        graph.addEdge(13,14);
         graph.show();
+        DepthFirstSearch dfs = new DepthFirstSearch(graph,0);
+        hamiltonPath hamiltonPath = new hamiltonPath(graph);
+        System.out.println("longest path is "+ hamiltonPath.maxPath);
 //        DepthFirstSearch dfs = new DepthFirstSearch(graph,0);
 //        BreathFirstSearch bfs = new BreathFirstSearch(graph,0);
 //        ConnectComponent cc = new ConnectComponent(graph);
@@ -104,7 +107,7 @@ public class Graph  {
 //        System.out.println("Node 12 is in connected component number "+ cc.connectComponentID(13));
 //        System.out.println(" Node 4 and node 8 is connect: "+cc.inTheSameConnectComponent(4,3));
 //        System.out.println(" graph has cycle: " + cycle.isHasCycle());
-        System.out.println(" graph is bipartite: " + bi.isIs2Color());
+//        System.out.println(" graph is bipartite: " + bi.isIs2Color());
 
         }
 }

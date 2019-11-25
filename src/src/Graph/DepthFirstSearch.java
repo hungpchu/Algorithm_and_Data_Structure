@@ -18,6 +18,7 @@ public class DepthFirstSearch {
     private int[] edgeTo;
     // s means source
     private final int s;
+    public int visit;
 
     private int countConnectCompoonent;
 
@@ -27,11 +28,23 @@ public class DepthFirstSearch {
         marked = new boolean[graph.V()];
         edgeTo = new int[graph.V()];
         this.s = s;
-        dfsIteration(graph,s);
+        dfsHamilton(graph,s,0);
+//        System.out.println("visit time is " + visit);
+    }
+    private void dfsHamilton(Graph graph, int v, int depth){
+        marked[v] = true;
+        System.out.println(" depth  = " + depth );
+        for(int neighbor: graph.adj[v]){
+            if(!marked[neighbor]){
+                edgeTo[neighbor] = v;
+                dfsHamilton(graph,neighbor,depth + 1);
+            }
+        }
     }
 
     private void dfs(Graph graph, int v){
         marked[v] = true;
+        visit++;
         //System.out.println(" v = " + v);
         for(int neighbor: graph.adj[v]){
             if(!marked[neighbor]){

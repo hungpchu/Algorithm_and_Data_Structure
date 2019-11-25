@@ -15,7 +15,7 @@ public class MyHashSet {
         Arrays.fill(hashset,-1);
     }
 
-    public int hashKey(int key) {return key % hashset.length;}
+    public int hashKey(int key) {return (key & 0x7fffffff) % hashset.length;}
 
     public void add(int key) {
 

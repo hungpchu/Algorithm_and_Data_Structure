@@ -11,6 +11,7 @@ public class Hex_Decimal {
         return num;
     }
 
+    // Integer.parseInt(string,16)
     public static int hexToDecimal(String hex){
         String hexElement = "0123456789ABCDEF";
         hex = hex.toUpperCase().trim();
@@ -24,6 +25,7 @@ public class Hex_Decimal {
         return result;
     }
 
+    // String.toHexString()
     public static String decimalToHex(int decimal){
         String hexElement = "0123456789ABCDEF";
         String result = "";
