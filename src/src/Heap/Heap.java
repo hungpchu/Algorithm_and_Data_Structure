@@ -167,7 +167,7 @@ public class Heap  {
         heap.insert(3);
         heap.insert(9);
         heap.insert(1);
-        heap.delMax();
+       // heap.delMax();
         heap.print();
 //        int[] arr = {4,52,6,1,0,98,9};
 //        heap.heapSort(arr);

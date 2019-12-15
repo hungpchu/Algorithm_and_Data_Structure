@@ -1,0 +1,12 @@
+Thread:
+share the same memory space within the given process
+-> issue when 2 threads modify a resource at the same time
+
+Synchronization:(Xảy ra đồng thời)
+control access to shared resources
+
+ synchronized to a method =  two threads cannot execute synchronized
+ methods on the same object instance at the same time.
+
+Locks( or monitor):
+synchronize access to a shared resources by associate the resource with the lock

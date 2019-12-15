@@ -1,0 +1,17 @@
+Deadlock:
+situation where a thread is waiting for an object lock that another thread holds
+each thread wait for the other thread to give up a lock
+-> both threads remains waiting forever
+
+Conditions for deadlock:
+1/ Mutual exclusion: only 1 process can access a resource at a given time
+
+2/ Hold and wait: process already holding a resource can request additional resources
+
+3/ No preemption(Không có quyền ưu tiên): 1 process cannot be forcibly remove other process's resource
+
+4/ Circular wait(Chờ thông tư): 2 or more processes form a circular chain where each process wait on another resource in the chain
+
+Deadlock prevention:
+remove above condition
+most algorithm focus on circular wait

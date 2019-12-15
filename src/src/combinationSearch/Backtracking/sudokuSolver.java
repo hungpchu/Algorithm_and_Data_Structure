@@ -9,7 +9,28 @@ public class sudokuSolver {
     public static void solveSudoku(char[][] board) {
         if(board == null || board.length == 0)
             return;
-            solve(board);
+            solveHung(board);
+    }
+
+    public static boolean solveHung(char[][] board){
+        for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < board[0].length;j++){
+                if(board[i][j] == '.'){
+                    for(char num = '1'; num <= '9' ; num++){
+                        if(fillValid(board,i,j,num)) board[i][j] = num;
+                        else{
+                            board[i][j] = '.';
+                            continue;
+                        }
+                        if(!solveHung(board)) board[i][j] = '.';
+                        else return true;
+                    }
+                    if(board[i][j] == '.') return false;
+                }
+
+            }
+        }
+        return true;
     }
 
     /***
@@ -25,7 +46,7 @@ public class sudokuSolver {
                     // range of char to fill in
                     for(char num = '1'; num <= '9';num++){
 
-                        // if fill valid the fill the number inside
+//                         if fill valid the fill the number inside
                         if(fillValid(board,i,j,num)) {
                             board[i][j] = num;
 
@@ -34,6 +55,7 @@ public class sudokuSolver {
                             // else restore the '.'
                             else board[i][j] = '.';
                         }
+
 
                         // fill continuously for the next '.'
 
