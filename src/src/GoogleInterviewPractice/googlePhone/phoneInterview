@@ -1,0 +1,116 @@
+Please use this Google doc during your interview (your interviewer will see what you write here). To free your hands for typing, we recommend using a headset or speakerphone.
+
+Link: https://leetcode.com/discuss/interview-question/345065/Google-or-Word-Extensions/322169?fbclid=IwAR2zYUGw6CSA4pW2A4y5naeioLiypGJfpGtgGZ8ippHqr5_qYVon0UiGN3A
+
+“helllllooooooo”
+
+word extension: > 2 same characters in a row
+
+E.g.
+input : “helllllooooooo”
+output : [[2,7],[8,14]]
+
+given:
+
+return: List of array
+
+constraint: “” -> return []
+		“ha” -> return []
+
+test:“helllllooooooo”
+1/ get through base case since the string length > 0 and is not null
+2/ count =0, startIndex = 0, endIndex = 0, i =1;
+3/ in the while loop:
+at i = 1:
+currentElement = s.charAt(1) =e;
+prevElement  = s.charAt(1-1) = s.charAt(0)= h;
+-> by pass the while loop
+-> i = 2;
+at i =2
+
+Time: O(N)->
+space: O(1) -> just variable
+
+approach:
+0/ count = 0, start, end;
+1/ loop over every character in the string
+2/ if string.charAt(index) == s.charAt(index +1) -> count++;
+3/ if(count > 2) ->
+
+hhhhhhello
+
+// all the class access to this method
+public static List<int[]> wordExtension(String input){
+	// base case: empty string
+	if(input.length() == 0 || input == null) return new ArrayList<>();
+
+	List<int[]> result = new ArrayList<>();
+	int count = 0, startIndex = 0, endIndex = 0;
+	int i = 0;
+	// not get to  out of bound
+	while( i < s.length() - 1){
+		char currentElement = s.charAt(i);
+		char prevElement = s.charAt(i +  1);
+		startIndex = i;
+		endIndex = startIndex;
+		while(currentElement == prevElement){
+			endIndex++;
+			count++;
+		}
+   		// if the count > 2 then we should include
+// the pair of start and end
+		if(count > 2){
+		   	int[] arr = new int[];
+			arr[0] = startIndex;
+			arr[1] = endIndex;
+			result.add(arr);
+	      }
+		// we will have O(N)
+		i = endIndex;
+		i++;
+	}
+	return result;
+}
+
+
+
+2)
+// time: O(1)
+// space: O(N)
+public static boolean isDictionaryWord(String s);
+
+// isDictionaryWord(“Google”): true
+// isDictionaryWord(“Gooooogle”): false
+// isDictionaryWord(“Aha”): false
+
+public static boolean isExtendedDictionaryWord(String s);
+// isDictionaryWord(“Google”): true
+// isDictionaryWord(“Gooooogle”): true
+// isDictionaryWord(“Ahaaaaaa”): false
+// isDictionaryWord(“Aha”): false
+
+rephrase:
+1/ if the word is in dictionary + extended =
+
+
+
+// time: O(N)
+// space: O(1)
+public static boolean isExtendedDictionaryWord(String s){
+	if(s.length() == 0) return false;
+
+	List<int[]> listWord = wordExtension(s);
+	if(listWord.size() == 0 && !isDictionary(s)) return false;
+	String result = new String();
+	//
+	if(listWord.size() > 1){
+		int i = 0, count = 0;
+		while (i < s.length() - 1){
+			while(s.charAt(i) == s.charAt(i + 1))i++;
+			result += s.charAt(i);
+			i++;
+		}
+	}
+	if(!isDictionary(result)) return false;
+	return true;
+}
