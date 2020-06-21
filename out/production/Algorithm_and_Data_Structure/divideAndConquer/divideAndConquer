@@ -1,0 +1,11 @@
+Link: https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pearson/05DivideAndConquer.pdf
+
+Divide and conquer:
+1/ Break up problem of size n into 2 equal part of size n/2
+2/ Solve 2 parts recursively
+3/ Combine solutions into overall solution
+
+Problem:
+1/ Count inversion
+2/ merge sort
+3/ find duplicate

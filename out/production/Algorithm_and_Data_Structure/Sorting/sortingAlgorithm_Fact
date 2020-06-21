@@ -1,0 +1,45 @@
+Merge Sort:
+1/ divide and conquer
+2/ Time: O(NlogN)
+3/ Space: O(N)
+
+Cons:
+1/ need extra space (array)
+2/ not optimal for space
+3/ not in-place sort
+
+Pros:
+1/ Use for big input of data (millions)
+2/ stable
+-> MergeSort is the choice if we have extra space and need stable
+-> MergeSort is chosen for Java's Arrays.sort for reference-typed method(Object)
+
+Quick Sort:
+1/ Average Time: O(NlogN)
+2/ Space: O(N)
+3/ Divide and conquer
+
+Pros:
+1/ partition in place
+2/ performance character:
+ -/ shorted inner loop and no data movement like mergesort
+ -/ use few compares
+-> Quick Sort is the choice in practical problem since it is very fast and require no extra space
+-> Quick Sort is chosen for Java's Arrays.sort for primitive type
+
+Cons:
+1/ worst case:
+  -/ time: O(N^2)
+  -/ space: linear
+2/ have to use shuffle array to avoid worst case
+
+
+
+Insertion sort:
+1/ Use 4 small input
+
+Reduction = situation where algorithm developed for 1 problem to solve another
+
+Duplicate: Are there any duplicates keys in arrays-> maybe good with sorting
+
+Ranking: A permutation( or ranking) is an array of N integers where each integer appear exactly 1

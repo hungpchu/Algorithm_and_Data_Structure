@@ -1,0 +1,24 @@
+1/ Adjacent Matrix:
+    Pros:
+        1/ Adding + looking an edge is faster O(1);
+        2/ Deleting an edge is faster O(1);
+        3/ “is there an edge between i and j” – O(1);
+        4/ good when the graph is dense where most of nodes connected to each other
+        -> less space
+        5// traverse takes O(N^2)
+
+    Cons:
+        1/ Finding (if exists) a path between two vertices – O(n^2);
+        2/ Space – O(n^2) with n is the number of node
+
+2/ Adjacent list:
+-/ Use the Array[] of Linked List, where array size is same as number of Vertices in the graph
+-/ Use the array of array List with the index is the node and value at index is the list contains all its connected nodes
+    1/ Pros:
+        1/ If there is a node who not connected to other nodes then we don have to create the memory for that list
+        2/ can get to each node in the adjacent list of array list in constant time
+        3/ space will be N+E
+        4/ traverse takes O(N+E)
+    2/ Cons:
+        1/ space will be the number of edge
+        2/ the array will contain the total number of N nodes

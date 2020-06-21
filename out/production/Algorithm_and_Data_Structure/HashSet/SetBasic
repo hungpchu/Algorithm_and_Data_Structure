@@ -1,0 +1,4 @@
+HashSet is a collection of unique elements
+
+Time complexity: O(1)
+add(), remove() and contains() operations cost constant O(1) time.

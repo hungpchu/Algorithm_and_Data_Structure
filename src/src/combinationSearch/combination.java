@@ -94,8 +94,8 @@ public class combination {
         tempIndex = 0;
         hs = new HashSet<>();
         int[] arr = {1,2,3,4};
-        permutationArray(arr,0,4);
-//        combinationArray(arr,0,r);
+//        permutationArray(arr,0,4);
+        combinationArray(arr,0,r);
 //        combinationString(input,"",0,r);
 //        permutationString(input,"",r);
     }

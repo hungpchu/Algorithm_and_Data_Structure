@@ -1,0 +1,24 @@
+Probability
+1/ Probability of A and B:
+    P(A and B) = P(B given A) * P(A) = P(A given B) * P(B)
+    For example: P of choosing even number between 1 and 5
+    P(A and B) = P(x is even and x <= 5)
+            = P(x is even given x <=5) * P(x <= 5) = 2/5 *1/2 = 1/5
+            = P(x<=5 given x is even) * P(x is even) = 2/5 * 1/2 = 1/5
+    Bayer's Theorem: P(A given B) =P(B given A) * P(A)/P(B)
+
+2/ Probability of A or B:
+    P(A or B) = P(A) + P(B) - P(A and B)
+
+3/ Independence:
+    If A and B are independent then A happens tells nothing about B
+    -> P(A and B) = P(A) * P(B) since P(B given A) = P(B) since A tells nothing about B
+
+4/ Mutual exclusive:
+    If A and B are mutually exclusive then if A happens then B can not happen
+    -> P(A or B) = P(A) + P(B) since P(A and B) = 0
+
+
+
+
+

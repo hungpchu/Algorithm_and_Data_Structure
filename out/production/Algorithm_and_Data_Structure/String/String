@@ -1,0 +1,20 @@
+String = sequence of characters + immutable
+Character = type of char and have 2^16 possible values
+-> pay attention to characters encoded in 7-bit ASCII or 8-bit extended ASCII
+charAt() = extract a character from a string, works in constant time
+
+Numbers = represent number as string
+radix = base of the number system
+String has base 256 number(2^8)
+
+String sort:
+1/ LSD(least significant digit) string sort: examine the character in the keys in a right to
+left order
+2/ MSD(most significant digit) string sort: examine the characters in the keys in a left to right
+order, work with the most significant character first
+-> similar to quicksort since they partition the array into independent pieces such that the
+array us completed by recursively applying the same method to sub array
+-> MSD uses the first character of the sort key to partition
+
+Key-index counting:
+Compute frequency count:

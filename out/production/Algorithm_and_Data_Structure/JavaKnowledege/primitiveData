@@ -1,0 +1,10 @@
+4 types:
+Integer: 32 bit from 2^31 to 2^31 - 1
+Character: 16 bit
+Boolean: true or false
+Real Number: 64 bit
+
+Other:
+Byte: 8 but
+long: 64 bit
+short: 16 bit

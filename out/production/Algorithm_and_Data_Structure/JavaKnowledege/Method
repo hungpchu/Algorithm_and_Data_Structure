@@ -1,0 +1,11 @@
+static method = function
+properties of method:
+1/ arguments are passed by value
+2/ Method names can be overloaded
+2/ Method has a single return value but may have many return statements
+
+Recursion = method call itself
+1/ recursion has base case:
+ if (end condition) return
+2/ recursive call must address subproblem that are smaller
+3/ recursive call must not address the subproblem that overlap

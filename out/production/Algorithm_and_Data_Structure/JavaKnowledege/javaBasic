@@ -1,0 +1,23 @@
+Overloading vs overriding:
+
+Overloading = 2 methods have the same name but differ in the type of number of argument.
+Ex:
+public int foo(int hung);
+public int foo(int hung, int chu);
+
+Overriding = a method shares the same name and function signature as other methods in the super classes.
+
+ Java does manipulate objects by reference, and all object variables are references.
+
+ Call by Value and Call by reference
+ C++ supports both call by value and call by reference.
+ Java supports call by value only. There is no call by reference in java.
+
+ Object-oriented
+ C++ is an object-oriented language. However, in C language, single root hierarchy is not possible.
+ Java is also an object-oriented language. However, everything (except fundamental types) is an object in Java.
+ It is a single root hierarchy as everything gets derived from java.lang.Object.
+
+ Memory management
+ C++: Accessible to programmer
+ Java: System controlled

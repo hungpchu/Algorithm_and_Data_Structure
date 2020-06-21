@@ -1,0 +1,31 @@
+OOP = Objected-oriented Programming
+
+1/ Data encapsulation: data hiding
+Data in this class is hidden from other classes
+Example: declare variable as private
+
+2/ Data abstract:
+Hide implementation details from user(developers)
+Functions will be provided to users.
+Example:
+
+ public abstract class Employee{} -> can not init
+ public class Salary extends Employee{} -> can init
+
+3/ Polymorphism: object takes many form, child class refer to parent class.
+Example:
+public interface Vegie{}
+public class Animals{}
+public class Deer extends Animals implement Vegie{}
+
+4/ Interface: refer type in Java, collect of abstract method.
+Class implements an interface -> inherit abstract method of the interface
+No need 4 the abstract keyword.
+Use interface as signing contract.
+
+5/ Inheritance: 1 class obtain the properties of another classes.
+use the "extend" keyword to inherit
+Example:
+class Super{}
+class Sub extend Super{}
+

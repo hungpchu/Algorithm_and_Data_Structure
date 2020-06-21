@@ -1,0 +1,30 @@
+Dynamic programming:
+0/ level up of recursion and better approach with all test coverages then greedy
+1/ Build computation from the bottom up
+2/ solve small subproblem and save solution
+3/ use those solution to build overall solution
+4/ break up the problem into sub-problems, solve sub-problem -> combine solution from sub-problem
+to form original solution
+
+Pros:
+1/ avoid exponential waste
+2/ simple then memorization
+
+Cons:
+1/ Use many spaces
+2/ Challenge for understanding bro :))
+
+Recipe:
+1/ Understand the structure of the problem
+2/ Recursively define the value of optimal solution
+3/ compute the value of optimal solution
+4/ construct optimal solution from computed information
+
+Technique:
+1/ binary choice
+2/ add new variable
+
+
+Top down: kinda like greedy
+
+Bottom up: kinda like dynamic program more

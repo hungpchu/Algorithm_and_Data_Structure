@@ -1,0 +1,13 @@
+Greedy analysis strategies
+
+1/ Greedy algorithm stays ahead -> after its step, its solution is as good as other
+2/ makes local optimal choice at each step as it attempts to find the global optimal way for  entire problem.
+
+Optimal offline caching:
+LRU(least recently used) cache: remove item whose most recent access are earliest
+LFU(least frequently used) cache: remove item with least frequency access
+LIFO(last in first out = stack ) cache = evict item brought in recently
+
+Reduced schedule  = schedule bring item d into the cache in step j<=> there is a request for d in step j
+and d is not in the cache
+chi dua d vao neu d k co trong cache va co request cho d

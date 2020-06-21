@@ -1,0 +1,4 @@
+log is the inverse function of exponential
+log_{base}Number = power;
+-> base^power = Number;
+Example: log_{2}8 = 3 with base = 2, power =3 and the number is 8

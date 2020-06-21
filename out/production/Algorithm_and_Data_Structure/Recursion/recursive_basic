@@ -1,0 +1,38 @@
+Recursion = built of sub-problem.
+
+1/ Bottom-up approach: solve small cases first and build solution for 1 case from previous case.
+2/ top-down approach: divide the problem into sub problems.
+
+3/ half and half: merge sort and binary search
+
+
+Recursion algorithm:
+-/ space inefficient (each recursive call add new layer to stack). If uses depth of n then use O(n) memory
+-> implement iterative
+
+Dynamic programming and memorization = recursive algorithm and find the overlapping subproblems -> cache those results for future calls.
+Memorization = top-down dynamic programming
+dynamic programming  = bottom up dp
+
+
+Recursion:
+1/ Math induction:
+    1/ Base case: prove for some specific value of N
+    2/ Induction step: Assume the statement is true for all the positive integer that less then N-> use that fact to prove N
+
+Mechanic of a function call:
+1/ save value of all the variables
+2/ init the value of argument variable
+3/ transfer control to the function
+4/ restore the environment
+5/ transfer control back to the calling code
+
+Pros:
+1/ easy to reason about the correct
+2/ decomposition is obvious but still not easy to understand
+
+Cons:
+1/ Potential for exponential waste
+2/ decomposition is not easy bro :))
+
+

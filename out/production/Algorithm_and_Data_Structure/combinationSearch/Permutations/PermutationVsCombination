@@ -1,0 +1,20 @@
+Multiplication rule:
+    1/ counting the different way of doing things
+
+1/ Permutation:
+    1/ selection of all possible arrangement in every order so that changing order of element is matter
+        For example: permutation of ABC is ABC, ACB and so on since we have to change the
+        position of each element A,B or C in string ABC
+    2/ Formula: P(n,k) = n!/(n-k)! since we do not to divide k! = permutations -> so do have repeated pairs but with changed position of the element
+    -> P(n,k) meaning permutation n choosing k
+
+
+2/ Combination:
+    1/  selection of all unique arrangement in every order with the changing the order of element does not matter
+        For example: Combination of ABC is ABC since we do not need to change the position of
+        the element A,B,C in the string ABC
+    2/ is a subset of permutation with order are not matter
+    3/ Formula: C(n,k) = n!/k!(n-k)! with k! represents to all repeated pair -> we divide k! then we only have unique pairs
+    -> C(n,k) meaning combination n choosing k
+    4/ Analyze formula:
+        C(n,k) = n*(n-1)...*(n-k+1)/ 1*2..*k

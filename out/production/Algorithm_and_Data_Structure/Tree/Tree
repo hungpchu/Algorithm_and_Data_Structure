@@ -1,0 +1,110 @@
+Tree
+
+1/ All type of trees:
+Tree = composed of nodes
+
+Binary tree = each node has  <= 2 children.
+The size of a tree is its number of nodes.
+The depth of a node in a tree is the number of links on the path from it to the root.
+The height of a tree is the maximum depth among its nodes.
+
+leaf node if it has no children.
+
+Binary search tree = each node follows the rule: left <= root < right.
+
+Complete binary trees = binary tree in which every level of the tree is fully filled, except for the last level.
+For the last level, filled from left to right.
+
+Full binary tree = binary tree in which node has either 0 or 2 child. Hence, no node has only 1 child.
+
+Perfect binary tree = full + complete, has exactly 2^k - 1 node where k is the number of levels
+
+2/ Tree traversal:
+
+In-order = visit left branch, then current node then the right branch
+
+public void inOrder (Node current){
+    if (current != null){
+       inOrder(current.left);
+       inOrder(current);
+       inOrder(current.right);
+    }
+}
+
+Pre-order = visit the current node, then the left node then the right node.
+
+public void preOrder(Node current){
+    if(current != null){
+        preOrder(current);
+        preOrder(current.left);
+        preOrder(current.right);
+    }
+}
+
+Post-Order = visit the left node, right node then current.
+
+public void postOrder(Node current){
+   if (current != null){
+       postOrder(current.left);
+       postOrder(current.right);
+       postOrder(current);
+   }
+}
+
+3/ Binary Heap:
+
+  Min heap = complete binary tree.  Moreover, each node will be smaller than its children.
+  The root = minimum element of the tree.
+
+Insert: O(log n)
+
+insert the element at the bottom.
+Insert at the rightmost spot then swap with the parent.
+
+Extract minimum element:
+
+Swap the minimum element with the last element in the heap (bottom or rightmost element).
+Remove the last element containing the min
+Bubble down this element, swap its with one of its children until we have the correct min heap.
+
+4/ Graph = collection of nodes with edges. Graph can be directed (1 way) or undirected (2 way).
+
+Graph contains multiple isolated graph.
+Connected graph = there is path between every pairs of verticles.
+Acyclic graph = one without cycles.
+
+Tree = type of graph, connected graph without cycle.
+
+5/ Adjacency list = way to represent a graph.
+Every vertex store a list of adjacent vertices.
+
+6/ Adjacency matrix: an NxN boolean matrix with a true value indicates an edge from node i to node j.
+
+7/ Graph search:
+
+a/ Depth 1st search:
+Start at the root (or any node).
+Explore each branch completely before moving to the next branch.
+-> Go depth 1st
+-> Easy to visit every node in the graph.
+Time complexity: O(V + E)
+
+Code:
+
+void search(Node root){
+    if (root == null) return null;
+    visit(root);
+    root.visited = true;
+    for each (Node n in root.adjacent){
+       if(n.visited == false) search(n);
+    }
+}
+
+b/ breadth 1st search:
+Start at the root (or any node).
+Explore each neighbor before going on to any of children.
+-> Go wide
+-> find the shortest path between 2 nodes.
+
+Code:
+

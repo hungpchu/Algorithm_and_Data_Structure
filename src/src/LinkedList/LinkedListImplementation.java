@@ -183,8 +183,8 @@ public Node createNode(Object dat){
             return b;
         if (b == null)
             return a;
-
-        /* Pick either a or b, and recur */
+        /* Pick eitheq
+        r a or b, and recur */
         if ((int)a.data <= (int)b.data) {
             result = a;
             result.next = sortedMerge(a.next, b);

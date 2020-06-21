@@ -1,0 +1,4 @@
+String = sequences of characters
+Conversion:
+1/ Integer.parseInt(String s) = int
+2/ Integer.toString(int i) = string

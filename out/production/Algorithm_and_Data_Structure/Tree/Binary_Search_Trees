@@ -1,0 +1,19 @@
+Binary Searching Tree:
+Time complex:
+access, insert, delete, search:O(logn)
+
+Space complex: O(n)
+
+Binary search tree = a symbol table implementation combining the flexibility of insert
+in linked-list and the efficiency of search in ordered array
+-> Using 2 links per node leads to efficient symbol table implement
+
+Binary seach tree satisfies the condition that bigger than root will be on the right and smaller than
+root will be on the left
+
+Binary search tree represents a set of keys and associated values
+
+Binary search tree keeps the key in order
+
+Binary Search Tree still has poor worst case performance
+Insert + search = O(N)

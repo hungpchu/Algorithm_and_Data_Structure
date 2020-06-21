@@ -1,0 +1,23 @@
+1/ Declare = process of define the variable along with its type and names
+Example: int id; where int is the type and id is the name
+
+2/ Initialization = assign a value to the name.
+Example: id = 1;
+
+3/ Java data representation = primitive and references type.
+
+4/ Primitive type = variable holds the value directly in the memory where the variable is allocated
+
+5/ Reference type = hold references to object.
+References = stores the memory address where the object is allocated + points to the object
+
+6/ Create objects:
+Initialization = using the new keyword -> allocate memory for the new object through constructor
+Example: User user = new User("Hung")
+-> allocate memory in the stack memory for the reference variable user which point to Object User with the "Hung" as the properties in the heap memory
+Constructor = initialize the instance variables represent the main properties of the create object.
+Example: public User(String name){
+   this.name = name;
+}
+Overload = class can have many constructor with different number of parameter
+

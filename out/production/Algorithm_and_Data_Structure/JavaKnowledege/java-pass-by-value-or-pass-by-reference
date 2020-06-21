@@ -1,0 +1,35 @@
+
+Resource: https://www.baeldung.com/java-pass-by-value-or-pass-by-reference
+Java is strictly pass by value
+
+1/ Pass by value: parameter passed to the callee method will be clone of original parameters in the caller method
+
+2/ Pass by reference: callee and caller operate on the same object. Unique id of object is sent to callee method
+
+3/ Parameters passing in Java:
+Stack memory = stores the values of primitive variables and references of references variables.
+During method invoke, a copy of each values of primitive or reference of references variable is created in stack memory.
+Then this variable is passed to method
+
+4/ Primitive = value is copied inside stack memory then that copied is passed to the callee method
+
+5/ References = reference is copied inside stack memory and that references is passed to the callee method
+
+6/ Passing Object references:
+In java, heap space = store dynamically all objects
+Stack memory = store all the references variable point to the objects
+Reference variable from the stack memory points to or refer to these objects in the heap memory
+
+When primitive variable is passed to method as argument:
+1/ Its value are store directly inside the stack memory
+2/copy of its variable is created in different location inside the stack memory
+3/ any changes to the copy of variables affect only the value of the copy version.
+Hence it will not affect the value of the original variable.
+
+When object is passed to method as argument:
+1/ copy of the reference variable is created inside the stack memory
+2/ that copy of reference variable will point to the same location of the object inside the heap memory
+(the original reference variable also point to the same location of the object inside the heap memory)
+3/ changes in copy of references variable will result in change of object
+4/ initialize the passed reference variable to point to the new location of object in the heap memory.
+ Hence, change make to reference variable will not change the original objects

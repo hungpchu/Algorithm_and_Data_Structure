@@ -1,0 +1,9 @@
+LinkedList is a linear data structure which consists of nodes holding a data field and a reference to another node
+Time complexity:
+
+Access, Searching: O(n)
+insert, delete:O(1)
+
+Space complexity: O(n)
+
+Linked list= recursive data structure that is either null or a reference to a node having generic item and a reference to a linked list

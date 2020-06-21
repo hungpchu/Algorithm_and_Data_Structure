@@ -1,0 +1,55 @@
+Search algorithm uses hashing will have 2 parts:
+1/ compute hash function that transform the search key into the array index
+2/ a collision resolution deal with 2 or more different key may hash into same index
+-> 2 collision resolution: separate chaining and linear probing
+
+
+Hash function:
+1/ Positive integer:
+Modular hashing: We choose the array size of M to be prime, with any positive integer key k
+-> compute reminder = k % M
+
+2/ java convention: hashCode() function returns 32 bit integer
+-> must be consistent with equals()
+-/ Convert a hashCode() to an array index:
+number.hashCode() % 0x7fffffff with 0x7fffffff is the Integer.MAX_VALUE address
+-> this code will mask off the sign bit and turn the result = from 32 bit number to 31 bit positive integer
+hashCode() disperse the result uniformly among 32-bit result value
+-> x.hashCode() % M may be negative when we need a result from 0 to  M - 1. Hence we need to do
+-> x.hashCode() % 0x7fffffff % M
+
+Requirement to implement a good hash function:
+1/ it should be consistent
+2/ it should be efficient
+3/ it should be uniformly distribute the keys
+
+Separate chaining: for each M array indices, a linked list of the key-value pairs whose key hash to that index
+-> Items collide are chained together in separate linked list
+-> uses a small block of memory for each key-value pair
+
+Linear probing: when there is a collision then we will check the next entry in the table. This method are identified with
+3 possible outcomes:
+1/ Key equal to search key
+2/ Empty position: Search miss
+3/ Key not equal to search key: try next entry
+-> hashing with open addressing is: rather than using memory space for references in linked lists
+we use it for empty entries in the table
+-> array resize is required since if inserting too much key-pair will encounter long search time or infinite loop
+-> uses 2 large arrays for the whole table
+
+Java libraries:
+1/ java.util.TreeMap = red-black BST
+2/ java.util.HashMap = hashing with separate chaining
+
+white list = where any keys in this file is good
+black list = where key in this file is bad
+For example: email application use filter to allow you to specify the address if your friend
+and consider any one else as spam
+
+Symbol table is dynamic dictionary where it is easy to look up information and update it. Example: phone book, dictionary
+
+Web search: type a key word and get a list of websites contain that keywords
+-> you are using an index created by your web search engine.
+Keys is the query and the value is the set of pages
+
+Inverted index = where values are used to locate key

@@ -1,0 +1,57 @@
+1/ Class and inheritance:
+
+#include<iostream>
+using namespace std;
+
+#define NAME_SIZE 50
+
+class Person{
+  int id;
+  char name[NAME_SIZE];
+  public:
+    void aboutMe(){
+    cout<< "I am a student";
+    }
+};
+
+class Student: public Person {
+public:
+   void aboutMe(){
+     cout<<"I am a student.";
+   }
+}
+
+int main(){
+  Student * p = new Student();
+  p->aboutMe();
+  delete p;
+  return 0;
+}
+
+Pointers and References:
+
+Pointer:
+
+a pointer = address of a variable and can be used to perform any operation that interact directly with the variable, like access and modify.
+
+Ex:
+int * p = new int;
+*p = 5;
+int * q = p;
+*p = 8;
+cout << * q; // prints 8
+Ex:
+int * p =  new int[2];
+p[0] = 0;
+p[1] = 1;
+p++
+
+a reference = another name (alias) for a pre-exist object and it does not have memory of its own.
+Ex:
+int a = 5;
+int & b = a;
+b= 7;
+cout<< a ; // a = 7
+
+Unlike pointers, references cannot be null and cannot be reassigned to another piece of memory.
+

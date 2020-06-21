@@ -1,0 +1,11 @@
+0/ Combinatorial search:
+    -/ Known: search space is exponential in size
+
+
+1/ Exhaustive search:
+    -/ iterate through all elements of a search space
+2/ Backtracking:
+    -/ method for examing the feasible solutions of a problem with the eliminating of
+    infeasible solutions
+    -/ can make search space to reasonable size
+

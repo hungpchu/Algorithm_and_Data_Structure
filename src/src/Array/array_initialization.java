@@ -22,6 +22,13 @@ public class array_initialization {
         for(int n: randomArr) System.out.print(n + " ");
 //       for (int a : array) System.out.print(a + " ");
 
+       int num = 7, cnt = 0;
+       while (num > 0){
+           ++cnt;
+           num &= (num - 1);
+       }
+       System.out.println("count = " + cnt);
+
    }
 
 

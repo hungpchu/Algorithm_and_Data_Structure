@@ -1,0 +1,17 @@
+Modular programming = where we build libraries of static methods and a static method can call
+static method in 1 library can call static method in other libraries
+
+API:
+1/ critical component of modular programming
+2/ documents explains the operation of library methods that are intended to use by others
+3/ application programming interface that lists the library name and signature and short description of
+each methods
+4/ list of constructor and instance method(operations) with informal describe
+5/ clearly articulate the behaviours of all the possible outputs
+
+public class Math
+--------------------------------------
+static double abs(double a)              absolute value of a
+static double max(double a, double b)    max of a and b
+
+Designing the APIS:
